@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Item</title>
+    <link rel="stylesheet" href="static/add.css">
+</head>
+<body>
+    <h1>Adicionar Item</h1>
+    <form action="/add" method="post" class="container">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="description">Descrição:</label>
+        <textarea id="description" name="description" required></textarea><br><br>
+        <button type="submit">Adicionar</button>
+    </form>
+    <div class="center-button">
+    <a href="/">Voltar</a>
+</div>
+</body>
+</html>

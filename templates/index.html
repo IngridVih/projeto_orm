@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <h1>Lista de Itens</h1>
+    <ul class="container">
+        {% for item in items %}
+            <li>{{ item.name }}</li>
+        {% endfor %}
+    </ul>
+    <div class="links-container">
+        <a href="/add">Adicionar Item</a>
+        <a href="/geolocation">Geolocalização</a>
+        <a href="/camera">Câmera</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Câmera</title>
+    <link rel="stylesheet" href="static/camera.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Câmera</h1>
+        <video id="video" width="640" height="480" autoplay></video>
+        <button id="snap">Tirar Foto</button>
+        <canvas id="canvas" width="640" height="480"></canvas>
+        <a href="/">Voltar</a>
+    </div>
+    <script>
+        navigator.mediaDevices.getUserMedia({ video: true })
+        .then(function(stream) {
+            const video = document.getElementById('video');
+            video.srcObject = stream;
+            video.play();
+        })
+        .catch(function(err) {
+            console.log("An error occurred: " + err);
+        });
+
+        document.getElementById('snap').addEventListener('click', function() {
+            const canvas = document.getElementById('canvas');
+            const context = canvas.getContext('2d');
+            const video = document.getElementById('video');
+            context.drawImage(video, 0, 0, 640, 480);
+        });
+    </script>
+</body>
+</html>
